@@ -17,7 +17,7 @@
     let dd = String(today.getDate()).padStart(2, '0');
     let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
     let yyyy = today.getFullYear();
-    today = mm + '/' + dd + '/' + yyyy;
+    today = mm + ' / ' + dd + ' / ' + yyyy;
     
     const MainContentDiv = document.getElementById("mainContent");
     const title = document.createElement("p");
@@ -29,6 +29,8 @@
     //Here comes CSS styling in javascript
     title.style.fontSize = "36px";
     title.style.fontFamily = "Gyahegi";
+    MainContentDiv.style.backgroundColor = "#f3f1f1";
+    MainContentDiv.style.padding = "5px";
     
   </script>
 </html>
