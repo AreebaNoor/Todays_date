@@ -18,19 +18,32 @@
     let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
     let yyyy = today.getFullYear();
     today = dd + ' / ' + mm + ' / ' + yyyy;
+
+    currentDate = new Date();
+    startDate = new Date(currentDate.getFullYear(), 0, 1);
+    let days = Math.floor((currentDate - startDate)/(24 * 60 * 60 * 1000));
+    let weekNumber = Math.ceil(days / 7);
     
     const MainContentDiv = document.getElementById("mainContent");
     const title = document.createElement("p");
-    //const dateText = document.createTextNode("Date: ");
-    //title.appendChild(dateText);
+    const weekEl = document.createElement("p");
+    
     MainContentDiv.appendChild(title);
     title.innerHTML += today;
+    MainContentDiv.appendChild(weekEl);
+    weekEl.innerHTML += weekNumber;
     
     //Here comes CSS styling in javascript
     title.style.fontSize = "26px";
     title.style.fontFamily = "Gyahegi";
     title.style.margin = "5px";
     title.style.textAlign = "center";
+    
+    weekEl.style.fontFamily = "Garges";
+    weekEl.style.fontSize = "26px";
+    weekEl.style.margin = "5px";
+    weekEl.style.textAlign = "center";
+
     MainContentDiv.style.backgroundColor = "#f3f1f1";
     MainContentDiv.style.padding = "5px";
     
